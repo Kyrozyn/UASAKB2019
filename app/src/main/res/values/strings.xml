@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">UASAKB2019</string>
+    <string name="splashscreen">splashscreen</string>
+    <string name="textview">TextView</string>
+    <string name="txtTitle">Selamat Datang</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="daftar_aplikasi_uas">Daftar Aplikasi UAS</string>
+</resources>
