@@ -61,8 +61,8 @@ public class Login extends AppCompatActivity {
     }
 
     protected void checkSharedPreferences() {
-        String usernamepreferences = sharedPreferences.getString(MySharedPreferences.username, "tidak login");
-        if (usernamepreferences == "tidak login") {
+        String usernamepreferences = sharedPreferences.getString(MySharedPreferences.username, null);
+        if (usernamepreferences == null) {
             Toast.makeText(this, "Anda Belum Login", Toast.LENGTH_SHORT).show();
         } else {
             goToMain();
@@ -71,7 +71,7 @@ public class Login extends AppCompatActivity {
     }
 
     protected void goToMain() {
-        Intent i = new Intent(Login.this, Main.class);
+        Intent i = new Intent(Login.this, MainActivity.class);
         startActivity(i);
         finish();
     }

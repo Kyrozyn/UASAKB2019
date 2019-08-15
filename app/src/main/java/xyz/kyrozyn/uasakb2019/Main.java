@@ -11,6 +11,11 @@ import android.widget.Toast;
 
 import xyz.kyrozyn.uasakb2019.model.MySharedPreferences;
 
+/*NIM : 10116281
+Nama : Andreas Rizki Rizaldi
+Kelas : IF-7
+Tanggal Pembuatan : 5 Agustus 2019
+ */
 public class Main extends AppCompatActivity {
     TextView username;
     SharedPreferences sharedPreferences;
