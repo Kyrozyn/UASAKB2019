@@ -16,6 +16,11 @@ import android.widget.Toast;
 import xyz.kyrozyn.uasakb2019.model.MySharedPreferences;
 import xyz.kyrozyn.uasakb2019.view.viewPagerAdapter;
 
+/*NIM : 10116281
+Nama : Andreas Rizki Rizaldi
+Kelas : IF-7
+Tanggal Pembuatan : 15 Agustus 2019
+ */
 public class MainActivity extends AppCompatActivity {
     public static String usernamePreference;
     SharedPreferences sharedPreferences;
@@ -35,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_kontak:
                     pager.setCurrentItem(2);
+                    return true;
+                case R.id.navigation_teman:
+                    pager.setCurrentItem(3);
                     return true;
                 case R.id.navigation_logout:
                     logout();
@@ -85,9 +93,11 @@ public class MainActivity extends AppCompatActivity {
         Fragment homeFragment = new HomeFragment();
         Fragment profilFragment = new ProfilFragment();
         Fragment kontakFragment = new KontakFragment();
+        Fragment temanFragment = new DaftarTemanFragment();
         viewPagerAdapter.addFragment(homeFragment);
         viewPagerAdapter.addFragment(profilFragment);
         viewPagerAdapter.addFragment(kontakFragment);
+        viewPagerAdapter.addFragment(temanFragment);
         viewPager.setAdapter(viewPagerAdapter);
     }
 

@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import io.realm.Realm;
+import io.realm.RealmList;
+import xyz.kyrozyn.uasakb2019.model.Teman;
 import xyz.kyrozyn.uasakb2019.model.User;
 
 /*NIM : 10116281
@@ -45,7 +47,7 @@ public class SignUp extends AppCompatActivity {
         strpassword = password.getText().toString();
         strconfirmpassword = confirmpassword.getText().toString();
 
-        if (strusername.equals("") && strpassword.equals("")) {
+        if (strusername.equals("") || strpassword.equals("")) {
             Toast.makeText(this, "Maaf, mohon isi semua field!", Toast.LENGTH_SHORT).show();
         } else {
             //check user is exist
@@ -57,6 +59,8 @@ public class SignUp extends AppCompatActivity {
                     realm.beginTransaction();
                     User user = realm.createObject(User.class, strusername);
                     user.setPassword(strpassword);
+                    RealmList<Teman> t = new RealmList<>();
+                    user.setTeman(t);
                     realm.commitTransaction();
                     Toast.makeText(this, "Anda berhasil daftar!", Toast.LENGTH_LONG).show();
                     onBackPressed();

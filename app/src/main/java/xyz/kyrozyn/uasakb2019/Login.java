@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -28,9 +29,13 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         setTitle("Login Aplikasi UAS 10116281");
-        realm = Realm.getDefaultInstance();
         sharedPreferences = getSharedPreferences(MySharedPreferences.key, Context.MODE_PRIVATE);
         checkSharedPreferences();
+        try {
+            realm = Realm.getDefaultInstance();
+        } catch (Exception e) {
+            Log.e("Realm Error : ", e.getMessage());
+        }
     }
 
     public void signup(View view) {
@@ -63,7 +68,7 @@ public class Login extends AppCompatActivity {
     protected void checkSharedPreferences() {
         String usernamepreferences = sharedPreferences.getString(MySharedPreferences.username, null);
         if (usernamepreferences == null) {
-            Toast.makeText(this, "Anda Belum Login", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Anda Belum Login", Toast.LENGTH_SHORT).show();
         } else {
             goToMain();
             //Toast.makeText(this, "Anda Sudah Login! Username = "+usernamepreferences, Toast.LENGTH_SHORT).show();

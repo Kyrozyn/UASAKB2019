@@ -9,6 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+/*NIM : 10116281
+Nama : Andreas Rizki Rizaldi
+Kelas : IF-7
+Tanggal Pembuatan : 15 Agustus 2019
+ */
 public class HomeFragment extends Fragment {
 
     @Override
@@ -21,5 +26,6 @@ public class HomeFragment extends Fragment {
         t.setText(MainActivity.usernamePreference);
         return view;
     }
+
 
 }

@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 /*NIM : 10116281
 Nama : Andreas Rizki Rizaldi
@@ -38,5 +39,8 @@ public class SplashScreen extends AppCompatActivity {
 
     protected void initRealm() {
         Realm.init(this);
+        RealmConfiguration realmConfiguration = new RealmConfiguration.Builder()
+                .name("database.realm").schemaVersion(1).migration(new MyMigration()).build();
+        Realm.setDefaultConfiguration(realmConfiguration);
     }
 }

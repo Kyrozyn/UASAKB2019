@@ -12,8 +12,10 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 
-/**
- * A simple {@link Fragment} subclass.
+/*NIM : 10116281
+Nama : Andreas Rizki Rizaldi
+Kelas : IF-7
+Tanggal Pembuatan : 15 Agustus 2019
  */
 public class ProfilFragment extends Fragment {
 
